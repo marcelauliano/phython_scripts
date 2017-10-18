@@ -18,6 +18,5 @@ for record in SeqIO.parse(my_fastq_parse, "fastq"):
 		if qual <= 22:
 			flag = False
 	if flag == True:
-		#print(record.format("fastq"))
 		output.write(record.format("fastq"))
 output.close()
