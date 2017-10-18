@@ -3,19 +3,19 @@
 
 from Bio import SeqIO
 import gzip
+import sys
 
-
-mainfile = "example.fastq"
+mainfile = sys.argv[1]
 if mainfile.endswith(".gz"):
 	my_fastq_parse = gzip.open(mainfile)
 else:
 	my_fastq_parse = open(mainfile)
-output = open("out.txt", "w")
+output = open(sys.argv[2], "w")
 
 for record in SeqIO.parse(my_fastq_parse, "fastq"):
 	flag = True 
 	for qual in record.letter_annotations["phred_quality"][0:4]:
-		if qual <= 14:
+		if qual <= 22:
 			flag = False
 	if flag == True:
 		#print(record.format("fastq"))
