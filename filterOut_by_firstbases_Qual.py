@@ -6,7 +6,7 @@ output = open("out.txt", "w")
 for record in SeqIO.parse(open("example.fastq"), "fastq"):
 	flag = True 
 	for qual in record.letter_annotations["phred_quality"][0:4]:
-		if qual <= 22:
+		if qual <= 14:
 			flag = False
 	if flag == True:
 		#print(record.format("fastq"))
