@@ -1,5 +1,4 @@
-#Learning process - this script filter out complete fastq sequences that have phred qualities bellow 22.
-#By Marcela Uliano-Silva tutored by Felix Heeger and Max Driller, 2017.
+#Learning process - this script filter out complete fastq s#Byequences that have phred qualities bellow 22.
 
 from Bio import SeqIO
 import gzip
