@@ -1,4 +1,4 @@
-#spliting a multifasta file in individual fasta files having the ID and file name
+#spliting a multifasta file in individual fasta files having the ID as file name
 from __future__ import division
 from Bio import SeqIO
 import sys
