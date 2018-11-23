@@ -6,6 +6,5 @@ input = sys.argv[1]
 inputopen = open(input)
 for sequence in SeqIO.parse(inputopen, 'fasta'):
         id = sequence.id
-        #out = sequence.format('fasta')
         with open(id, 'w') as output:
                 output.write(sequence.format('fasta'))
