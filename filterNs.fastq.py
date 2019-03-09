@@ -1,4 +1,3 @@
-#Learning process - this script filter out complete fastq sequences that have at least one N.
 #By Marcela Uliano-Silva 
 
 from Bio import SeqIO
