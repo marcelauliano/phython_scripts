@@ -1,4 +1,4 @@
-#lazs without args
+#lazy write without args
 
 from __future__ import division
 from Bio import SeqIO
