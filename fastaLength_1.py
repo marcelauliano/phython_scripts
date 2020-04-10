@@ -2,10 +2,13 @@ from __future__ import division
 from Bio import SeqIO
 import sys
 input_fasta = sys.argv[1]
-output_file = open(sys.argv[2], "w")
+output = open(sys.argv[2], "w")
 for sequence in SeqIO.parse(input_fasta, 'fasta'):
         id = sequence.id
-        count = len(sequence)
-        out = '>' + id + '\t' + str(count) + '\n'
-        output_file.write(out)
-output_file.close()
+        get = sequence[8618:]
+        length = len(get)
+        out1 = '> ' + 'length got is ' + str(length)
+        out2 = get.format('fasta')
+        output.write(out2)
+        print(out1)
+output.close()
