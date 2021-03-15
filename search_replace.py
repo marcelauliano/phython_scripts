@@ -1,4 +1,4 @@
-#Replace multiple filds in a file from a python dict given in a file with two columns. Key is the value to be searched, value is the one to replace it.
+#Replace multiple fields in a file from a python dict given in a file with two columns. Key is the value to be searched, value is the one to replace it.
 
 import sys
 import argparse 
