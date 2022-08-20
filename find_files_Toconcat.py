@@ -4,7 +4,7 @@ import os
 import pandas as pd
 import sys
 path =[]
-with open('/lustre/scratch123/tol/teams/tola/users/mu2/mitohifi-paper/new_Hymenoptera_runs/Andrena_bucephala/lista') as f:
+with open('lista') as f:
     for l in f:
         path.append(l.rstrip("\n"))
 lista=[]
