@@ -1,6 +1,9 @@
 #giving a bam file do
 #bedtools genomecov -ibam ptg000001l.rotated_rotatedg60.bam
 
+#sys.argv[1] <- bed file with coverage
+#sys.arg2[2] <- name of contig to plot
+#sys.arg3[3] <- name of final plot
 
 import pandas as pd
 import sys
@@ -13,7 +16,7 @@ n=['id', 'position', 'coverage']
 df = pd.read_csv(sys.argv[1], sep="\t", names=n, )
 
 #df2 is filtering to keep only the contig of interest, which in this case is ptg000001l.rotated_rotated
-df2 = df.loc[df['id'] == "ptg000001l.rotated_rotated"]
+df2 = df.loc[df['id'] == sys.argv[2]]
 
 sns.distplot(
     
@@ -21,4 +24,4 @@ sns.distplot(
     
     kde=False,
 )
-plt.savefig("coverage.png")
+plt.savefig(sys.argv[3] + ".png")
