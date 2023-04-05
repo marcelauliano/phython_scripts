@@ -263,7 +263,10 @@ The pipeline has stopped !! You need to run further scripts to check if you have
     logging.debug(f"Threads per contig={threads_per_contig}")
     logging.debug(f"Thresholds for circularization: circular size={args.circular_size} | circular offset={args.circular_offset}")
     logging.debug(f"Thresholds for annotation (MitoFinder): maximum contig size={max_contig_size}")
-    
+    #from parallel_annotation import process_contig, process_contig_02
+    #from parallel_annotation_mitos import process_contig_mitos, process_contig_02_mitos
+    #functools.partial - fazer anotacao em paralelo. Permite q de como input uma funcao e cada virgula sao argumentos necessarios. 
+    #
     if args.mitos:
         logging.info("Annotation will be done using MITOS2")
         if args.a == "fungi":
