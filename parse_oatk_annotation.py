@@ -32,7 +32,6 @@ result1 = df.groupby('query')['gene_tRNA'].nunique().reset_index(name='gene_tRNA
 result1
 
 #Now let's filter by e-value as well. 
-
 # Filter groups based on 'e-value' condition
 filtered_counts = result[result['e-value'] <= 0.01].groupby(['query', 'gene_tRNA'])['count'].sum()
 
