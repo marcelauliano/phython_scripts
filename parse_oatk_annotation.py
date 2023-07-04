@@ -6,7 +6,7 @@ parser.add_argument("-h", "--help", action="help", default=argparse.SUPPRESS, he
 parser.add_argument("-i", help= "-i: annotation file called *oatk.asm.annot_mito.txt from oatk", required = "True")
 parser.add_argument("-o1", help= "-o1: name for first output wich is a table of gene and tRNA counts", required = "True")
 parser.add_argument("-o2", help= "-o2: name for file showing which genes and tRNAs in each path. Only the ones annotated with evalue smaller or equal to 0.01", required = "True")
-parser.add_argument("-o3", help= "-o2: list comma-separated of query names to input to bandage to draw graph around those nodes", required = "True")
+parser.add_argument("-o3", help= "-o2: comma-separated list of query names to input to bandage to draw graph around those nodes", required = "True")
 
 args = parser.parse_args()
 
@@ -68,5 +68,6 @@ with open(output_file, 'w') as file:
         
         # Write the line to the output file
         file.write(line)
+#Last, let's get a comma-separated list of nodes to past on bandage to draw graph around those nodes.        
 with open(args.o3, 'w') as file:
     file.write(','.join(merged_df['query'].astype(str).tolist()))
