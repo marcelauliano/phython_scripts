@@ -29,7 +29,6 @@ df[['gene_tRNA', 'query', 'hmmfrom', 'hmmto', 'alifrom', 'alito', 'strand', 'e-v
 result = df.groupby(['query', 'gene_tRNA', 'e-value']).size().reset_index(name='count')
 result['e-value'] = pd.to_numeric(result['e-value'])
 result1 = df.groupby('query')['gene_tRNA'].nunique().reset_index(name='gene_tRNA_count')
-result1
 
 #Now let's filter by e-value as well. 
 # Filter groups based on 'e-value' condition
