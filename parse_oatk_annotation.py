@@ -2,10 +2,10 @@ import pandas as pd
 import argparse
 
 parser= argparse.ArgumentParser(add_help=False)
-parser.add_argument("-h", "--help", action="help", default=argparse.SUPPRESS, help= "Parse *oatk.asm.annot_mito.txt file for oatk to understand how many genes and tRNA annotated in each graph path") 
+parser.add_argument("-h", "--help", action="help", default=argparse.SUPPRESS, help= "Parse *oatk.asm.annot_mito.txt file from oatk to understand how many genes and tRNAs are annotated in each graph node") 
 parser.add_argument("-i", help= "-i: annotation file called *oatk.asm.annot_mito.txt from oatk", required = "True")
 parser.add_argument("-o1", help= "-o1: name for first output wich is a table of gene and tRNA counts", required = "True")
-parser.add_argument("-o2", help= "-o2: name for file showing which genes and tRNAs in each path. Only the ones annotated with evalue smaller or equal to 0.01", required = "True")
+parser.add_argument("-o2", help= "-o2: name for file showing which genes and tRNAs in each node. Only the ones annotated with evalue smaller or equal to 0.01", required = "True")
 parser.add_argument("-o3", help= "-o2: comma-separated list of query names to input to bandage to draw graph around those nodes", required = "True")
 
 args = parser.parse_args()
@@ -30,7 +30,6 @@ df[['gene_tRNA', 'query', 'hmmfrom', 'hmmto', 'alifrom', 'alito', 'strand', 'e-v
 result = df.groupby(['query', 'gene_tRNA', 'e-value']).size().reset_index(name='count')
 result['e-value'] = pd.to_numeric(result['e-value'])
 result1 = df.groupby('query')['gene_tRNA'].nunique().reset_index(name='gene_tRNA_count')
-result1
 
 #Now let's filter by e-value as well. 
 
