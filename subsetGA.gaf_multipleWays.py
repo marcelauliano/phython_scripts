@@ -31,8 +31,7 @@ with open(input_file, "r") as file:
 
 #Then open it as a dataframe
 column_names = ['gene_tRNA', 'ac', 'query', 'ac1', 'hmmfrom', 'hmmto', 'alifrom', 'alito', 'evnfrom', 'envto', 'modlen', 'strand', 'e-value', 'score', 'bias', 'description']
-dtype = {'gene_tRNA': object, 'ac': object, 'query': object, 'ac1': object, 'hmmfrom': int, 'hmmto': int, 'alifrom': int, 'alito': int, 'evnfrom': int, 'envto': int, 'modlen': int, 'strand': object, 'e-va
-lue': float, 'score': float, 'bias': float, 'description': object}
+dtype = {'gene_tRNA': object, 'ac': object, 'query': object, 'ac1': object, 'hmmfrom': int, 'hmmto': int, 'alifrom': int, 'alito': int, 'evnfrom': int, 'envto': int, 'modlen': int, 'strand': object, 'e-value': float, 'score': float, 'bias': float, 'description': object}
 df = pd.DataFrame(data, columns=column_names).astype(dtype)
 df[['gene_tRNA', 'query', 'hmmfrom', 'hmmto', 'alifrom', 'alito', 'strand', 'e-value', 'score',]]
 
