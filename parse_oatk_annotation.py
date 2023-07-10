@@ -2,8 +2,7 @@ import pandas as pd
 import argparse
 
 parser= argparse.ArgumentParser(add_help=False)
-parser.add_argument("-h", "--help", action="help", default=argparse.SUPPRESS, help= "Parse *oatk.asm.annot_mito.txt file from oatk to understand how many genes and tRNAs are annotated in each graph 
-node")
+parser.add_argument("-h", "--help", action="help", default=argparse.SUPPRESS, help= "Parse *oatk.asm.annot_mito.txt file from oatk to understand how many genes and tRNAs are annotated in each graph node")
  
 parser.add_argument("-i", help= "-i: annotation file called *oatk.asm.annot_mito.txt from oatk", required = "True")
 parser.add_argument("-o1", help= "-o1: name for first output wich is a table of gene and tRNA counts")
