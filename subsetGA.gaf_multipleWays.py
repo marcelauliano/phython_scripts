@@ -51,8 +51,7 @@ else:
 df7=df6[df6['path_matching'].str.match(regex)]
 df7.sort_values('path_matching').to_csv("{}filtered2.gaf".format(args.g), index=False, header=None, sep="\t")
 
-df8 = df7[['queryname','query_length','query_start','query_end','strand', 'path_matching','path_length','path_start','path_end', 'residue_matches', 'alignm_length', 'mapping_qual', 'identity']
-].sort_values('path_matching')
+df8 = df7[['queryname','query_length','query_start','query_end','strand', 'path_matching','path_length','path_start','path_end', 'residue_matches', 'alignm_length', 'mapping_qual', 'identity']].sort_values('path_matching')
 df8.to_csv("{}filtered3.gaf".format(args.l), index=False, sep="\t")
 df9 = df8['path_matching'].value_counts().rename_axis('unique_values').reset_index(name='counts')
 df9.to_csv("{}filtered3.cov".format(args.l), index=False, sep="\t")
