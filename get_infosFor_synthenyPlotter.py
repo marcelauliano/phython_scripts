@@ -29,8 +29,8 @@ def process_input(input_file, output_file, id_output_file):
                 id_outfile.write(f"{identifier}\n")
 
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser(description='Process input file and generate output files.')
-    parser.add_argument('input_file', help='Path to the input file')
+    parser = argparse.ArgumentParser(description="Get genome IDs and produce info tables for Wright's syntey_plotter. Only needs a genome as input")
+    parser.add_argument('input_file', help='Path to genome fasta')
 
     args = parser.parse_args()
 
