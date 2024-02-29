@@ -1,5 +1,3 @@
-# Assuming you have two files named 'file1.txt' and 'file2.txt'
-
 # Read contents of file 1 into a Python list
 with open('/lustre/scratch123/tol/teams/tola/users/mu2/mollusca/ALG/for_syngraphsfrom260124-complete-chr/ls1', 'r') as file1:
     content1 = file1.read().splitlines()
